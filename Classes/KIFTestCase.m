@@ -40,22 +40,42 @@
 
 - (void)setUp;
 {
-    [self beforeEach];
+    @try {
+        [self beforeEach];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception caught on beforeEach: %@", [exception description]);
+    }
 }
 
 - (void)tearDown;
 {
-    [self afterEach];
+    @try {
+        [self afterEach];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception caught on afterEach: %@", [exception description]);
+    }
 }
 
 + (void)setUp
 {
-    [[self new] beforeAll];
+    @try {
+        [[self new] beforeAll];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception caught on beforeAll: %@", [exception description]);
+    }
 }
 
 + (void)tearDown
 {
-    [[self new] afterAll];
+    @try {
+        [[self new] afterAll];
+    }
+    @catch (NSException *exception) {
+        NSLog(@"Exception caught on afterAll: %@", [exception description]);
+    }
 }
 
 #else
