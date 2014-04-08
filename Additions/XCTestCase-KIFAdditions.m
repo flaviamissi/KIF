@@ -19,9 +19,8 @@ MAKE_CATEGORIES_LOADABLE(TestCase_KIFAdditions)
 
     [self recordFailureWithDescription:exception.description inFile:exception.userInfo[@"SenTestFilenameKey"] atLine:[exception.userInfo[@"SenTestLineNumberKey"] unsignedIntegerValue] expected:NO];
 
-    if (stop) {
+    if (stop)
         [exception raise];
-    }
 }
 
 - (void)failWithExceptions:(NSArray *)exceptions stopTest:(BOOL)stop

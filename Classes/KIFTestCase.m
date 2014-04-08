@@ -45,6 +45,7 @@
     }
     @catch (NSException *exception) {
         NSLog(@"Exception caught on beforeEach: %@", [exception description]);
+        [exception raise];
     }
 }
 
@@ -55,6 +56,7 @@
     }
     @catch (NSException *exception) {
         NSLog(@"Exception caught on afterEach: %@", [exception description]);
+        [exception raise];
     }
 }
 
@@ -65,6 +67,7 @@
     }
     @catch (NSException *exception) {
         NSLog(@"Exception caught on beforeAll: %@", [exception description]);
+        [exception raise];
     }
 }
 
@@ -75,6 +78,7 @@
     }
     @catch (NSException *exception) {
         NSLog(@"Exception caught on afterAll: %@", [exception description]);
+        [exception raise];
     }
 }
 

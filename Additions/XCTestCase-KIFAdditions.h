@@ -10,5 +10,4 @@
 #import "KIFTestActor.h"
 
 @interface XCTestCase (KIFAdditions) <KIFTestActorDelegate>
-
 @end
